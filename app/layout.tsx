@@ -1,6 +1,9 @@
+import ListCount from '@/components/ListCount'
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import { Suspense } from 'react'
+import Loader from '@/components/Loader'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -16,7 +19,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <div className='flex'>
+          <div className="w-[220px] border-r bg-gray-100 py-8 px-4 h-screen">
+            <Suspense fallback={<Loader/>}>
+              <ListCount/>
+            </Suspense>
+    
+          </div>
+          <div className="grow">
+            {children}
+          </div>
+        </div>
+
+      </body>
     </html>
   )
 }
