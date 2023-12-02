@@ -6,6 +6,10 @@ import prisma from '@/prisma/client'
 import { Suspense } from 'react'
 import Loader from '@/components/Loader'
 
+
+export const dynamic = 'force-dynamic'
+export const revalidate = 0
+
 export default async function Personal() {
   const getGroup = async ()=>{
     const spaces = await prisma.securedSpace.findMany({
