@@ -19,15 +19,14 @@ export default async function Personal() {
         createdAt:"desc"
       }
     })
-    await new Promise((resolve)=>setTimeout(resolve,1000))
     return spaces
   }
-  const spaces = getGroup() as unknown as Promise<IHostelEntry[]>
+  const spaces = await getGroup() as unknown as IHostelEntry[]
   return (
     <div>
         <h1 className="text-center font-semibold text-base ">Personal Space</h1>
         <Suspense fallback={<Loader/>}>
-          <BedSpaceTable spaces={spaces}/>
+          <BedSpaceTable data={spaces}/>
         </Suspense>
 
         

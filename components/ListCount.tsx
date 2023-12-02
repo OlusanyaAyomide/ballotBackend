@@ -21,7 +21,6 @@ export default async function ListCount() {
         ]
       }
     })
-    await new Promise((resolve)=>setTimeout(resolve,3000))
     return {personal,group}
   }
   const {personal,group} = await getData()

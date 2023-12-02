@@ -5,8 +5,7 @@ import MarkSuccess from './MarkSuccess'
 import { dateOptions } from '@/utils/constants'
 
 
-export default async  function BedSpaceTable({spaces}:{spaces:Promise<IHostelEntry[]>}) {
-    const data = await spaces
+export default async  function BedSpaceTable({data}:{data:IHostelEntry[]}) {
     return (
         <div className="max-w-[calc(100vw-10px)] overflow-auto">
         <Table>
@@ -24,7 +23,7 @@ export default async  function BedSpaceTable({spaces}:{spaces:Promise<IHostelEnt
                 </TableRow>
             </TableHeader>
             <TableBody>
-                {data.map((item,key)=>{
+                {data?.map((item,key)=>{
                     const date = new Date(item.createdAt)
                     const formattedDate: string = new Intl.DateTimeFormat('en-US', dateOptions).format(date)
                     return <TableRow key={key} className={`${key%2===0?"bg-gray-200/50":""}`}>
