@@ -13,12 +13,6 @@ export const revalidate = 0
 export default async function Personal() {
   const getGroup = async ()=>{
     const spaces = await prisma.securedSpace.findMany({
-      where:{
-        OR:[
-          {type:"group"},
-          {type:"both"},
-        ],
-      },
       orderBy:{
         createdAt:"desc"
       }

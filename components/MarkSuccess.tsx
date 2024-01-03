@@ -1,11 +1,11 @@
 import React from 'react'
 import { Checkbox } from "@/components/ui/checkbox"
 
-export default function MarkSuccess() {
+export default function MarkSuccess({checked}:{checked:boolean}) {
 
   return (
     <div className='w-fit'>
-        <Checkbox />
+        <Checkbox checked ={checked}/>
     </div>
   )
 }
