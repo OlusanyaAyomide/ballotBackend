@@ -1,5 +1,4 @@
 import React from 'react'
-import {Table,TableBody,TableCaption,TableCell,TableHead,TableHeader,TableRow} from "@/components/ui/table"
 import { IHostelEntry, mockDatas } from '@/utils/constants'
 import BedSpaceTable from '@/components/BedSpaceTable'
 import prisma from '@/prisma/client'

@@ -2,12 +2,13 @@ import BedSpaceTable from '@/components/BedSpaceTable'
 import prisma from '@/prisma/client'
 import { Suspense } from 'react'
 import Loader from '@/components/Loader'
+import { IHostelEntry } from '@/utils/constants'
 
 
 export const dynamic = 'force-dynamic'
 export const revalidate = 0
 
-export default async function LayOutNav({params}) {
+export default async function LayOutNav({params}:{params:any}) {
     const clientID = params.client
     const getGroup = async ()=>{
         const spaces = await prisma.securedSpace.findMany({
