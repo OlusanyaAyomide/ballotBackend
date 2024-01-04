@@ -17,7 +17,7 @@ export async function POST(req:Request){
         hostel:Joi.string().required(),
         name:Joi.string().required(),
         securedBy:Joi.string().required(),
-        type:Joi.string().valid("personal","group" ,"both").required()
+        type:Joi.string().required()
     })
     const validation = schema.validate(body)
 
