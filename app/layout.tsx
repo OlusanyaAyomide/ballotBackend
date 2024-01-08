@@ -1,5 +1,8 @@
-import ListCount from '@/components/ListCount'
 import './globals.css'
+
+import ListCount from '@/components/ListCount'
+import ListClient from '@/components/ListClient'
+import Personal from '@/components/Personal'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { Suspense } from 'react'
@@ -23,7 +26,10 @@ export default function RootLayout({
         <div className='flex'>
           <div className="w-[220px] border-r bg-gray-100 py-8 px-4 h-screen">
             <Suspense fallback={<Loader/>}>
-              <ListCount/>
+              {/* <ListCount/> */}
+              <ListClient>
+                <Personal/>
+              </ListClient>
             </Suspense>
     
           </div>

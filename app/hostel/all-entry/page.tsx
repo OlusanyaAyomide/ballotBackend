@@ -1,4 +1,5 @@
 import React from 'react'
+import {Table,TableBody,TableCaption,TableCell,TableHead,TableHeader,TableRow} from "@/components/ui/table"
 import { IHostelEntry, mockDatas } from '@/utils/constants'
 import BedSpaceTable from '@/components/BedSpaceTable'
 import prisma from '@/prisma/client'
@@ -12,12 +13,6 @@ export const revalidate = 0
 export default async function Personal() {
   const getGroup = async ()=>{
     const spaces = await prisma.securedSpace.findMany({
-      where:{
-        OR:[
-          {type:"group"},
-          {type:"both"},
-        ],
-      },
       orderBy:{
         createdAt:"desc"
       }

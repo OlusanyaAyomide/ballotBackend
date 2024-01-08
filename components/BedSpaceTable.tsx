@@ -40,7 +40,7 @@ export default async  function BedSpaceTable({data}:{data:IHostelEntry[]}) {
                         <TableCell>{item.securedBy}</TableCell>
                         <TableCell>{formattedDate}</TableCell>
                         <TableCell>
-                            <MarkSuccess/>
+                            <MarkSuccess checked = {item.isSuccess}/>
                         </TableCell>
                     </TableRow>              
                     })}
